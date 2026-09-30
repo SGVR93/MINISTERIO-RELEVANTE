@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RELEVANTE | Ministerio de Jóvenes Adultos</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        themeOrange: '#ff5e3a',
+                        themePink: '#ff007f',
+                        themeBlue: '#1e1450',
+                        spaceDark: '#05050a',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #05050a;
+            color: #ffffff;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Space Background Animations */
+        .stars-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1e1450 0%, #05050a 80%);
+            overflow: hidden;
+        }
+        .stars-container::after {
+            content: ""; position: absolute; top: -50vh; left: -50vw; width: 200vw; height: 200vh;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 300px 300px;
+            animation: starsAnim 150s linear infinite;
+            opacity: 0.5;
+        }
+        @keyframes starsAnim {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-1000px); }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover { border-color: rgba(255, 0, 127, 0.3); }
+
+        .bg-rlv-gradient {
+            background: linear-gradient(135deg, #ff5e3a 10%, #ff007f 50%, #1e1450 90%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #ff5e3a, #ff007f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+        }
+
+        /* Pulsing Glow Animation for Buttons */
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 0, 127, 0.4), inset 0 0 10px rgba(255, 0, 127, 0.2); }
+            50% { box-shadow: 0 0 25px rgba(255, 0, 127, 0.8), inset 0 0 15px rgba(255, 0, 127, 0.5); }
+            100% { box-shadow: 0 0 10px rgba(255, 0, 127, 0.4), inset 0 0 10px rgba(255, 0, 127, 0.2); }
+        }
+
+        .btn-pulse {
+            border: 2px solid #ff007f;
+            animation: pulseGlow 2s infinite alternate;
+            transition: all 0.3s ease;
+            color: #fff;
+        }
+        .btn-pulse:hover {
+            background-color: #ff007f;
+            animation: none;
+            box-shadow: 0 0 30px #ff007f inset, 0 0 40px #ff007f;
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .input-glow:focus {
+            box-shadow: 0 0 15px rgba(255, 94, 58, 0.5);
+            border-color: #ff5e3a;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="stars-container"></div>
+
+    <a href="https://wa.me/573000000000" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-16 h-16 rounded-full flex justify-center items-center text-3xl shadow-[0_4px_20px_rgba(37,211,102,0.5)] hover:scale-110 transition-transform duration-300 z-50">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <header class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-10">
+        
+        <div class="w-[150px] h-[150px] rounded-full bg-rlv-gradient border-2 border-dashed border-white flex justify-center items-center mb-8 shadow-[0_0_30px_rgba(255,0,127,0.5)] p-4 relative z-10">
+            <span class="font-orbitron text-xs font-bold text-white text-center drop-shadow-md">
+                ESPACIO PARA LOGO
+            </span>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h1 class="font-orbitron font-black text-5xl md:text-7xl mb-6 text-gradient uppercase tracking-wider">
+                Bienvenido a RELEVANTE
+            </h1>
+            <p class="font-inter text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
+                Más que un grupo, tu órbita. Un espacio para jóvenes adultos (26 a 40 años) de la <strong class="text-white">Iglesia Puente Largo - Floresta</strong> para aprender, crecer y caminar juntos.
+            </p>
+            <a href="#unete" class="inline-block font-orbitron font-bold uppercase tracking-widest px-8 py-4 rounded-full btn-pulse text-sm md:text-base">
+                <i class="fa-solid fa-rocket mr-2"></i> Únete a la misión
+            </a>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-themePink text-2xl opacity-80"></i>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-16 space-y-12">
+        
+        <div class="w-full">
+            <section class="glass-card rounded-3xl p-10 flex flex-col justify-center items-center text-center transform transition duration-500 hover:scale-[1.01]">
+                <i class="fa-solid fa-fire-flame-curved text-5xl text-themeOrange mb-6 drop-shadow-[0_0_15px_rgba(255,94,58,0.8)]"></i>
+                <h2 class="font-orbitron text-2xl md:text-3xl uppercase text-themePink drop-shadow-[0_0_10px_rgba(255,0,127,0.6)] mb-6">Tu Combustible de Hoy</h2>
+                <blockquote class="font-inter italic text-xl md:text-3xl text-white mb-6 max-w-4xl leading-relaxed" id="random-verse-text">
+                    "Sincronizando con el cielo..."
+                </blockquote>
+                <p class="font-orbitron font-bold text-themeOrange text-xl tracking-wider drop-shadow-[0_0_8px_rgba(255,94,58,0.6)]" id="random-verse-ref"></p>
+                <p class="mt-6 text-sm text-gray-300">Un día más de bendiciones, un paso más en tu propósito.</p>
+            </section>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section class="glass-card rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-40 h-40 bg-themePink rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
+                <h2 class="font-orbitron text-3xl uppercase text-gradient mb-6">¿Hacia dónde volamos?</h2>
+                <p class="font-inter text-gray-200 text-lg leading-relaxed mb-6">
+                    Bajo la guía del <strong>Pastor Juan Celis</strong>, RELEVANTE es el ministerio de jóvenes adultos de la Iglesia Puente Largo. Sabemos que entre los 26 y 40 años enfrentamos los mayores desafíos y tomamos las decisiones más grandes de la vida. No tienes que hacerlo solo.
+                </p>
+                <div class="bg-black/30 p-5 rounded-xl border-l-4 border-themeOrange shadow-[0_0_15px_rgba(255,94,58,0.15)] relative z-10">
+                    <h3 class="font-orbitron text-themeOrange mb-2 font-bold uppercase text-sm tracking-wide">Nuestra Visión (Puente Largo)</h3>
+                    <p class="font-inter text-gray-100 italic">
+                        "Llevar el mensaje de salvación, consolidar a los creyentes y enviarlos a transformar su entorno con el amor de Cristo."
+                    </p>
+                </div>
+            </section>
+
+            <section class="glass-card rounded-3xl p-10 text-center relative overflow-hidden flex flex-col justify-center items-center">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-transparent via-themePink to-transparent opacity-70"></div>
+                
+                <h2 class="font-orbitron text-3xl md:text-4xl uppercase text-white mb-3">Próxima Reunión</h2>
+                <p class="font-bold text-lg md:text-xl tracking-wide mb-6 text-themeOrange drop-shadow-[0_0_10px_rgba(255,94,58,0.6)]">Todos los sábados a las 5:00 PM</p>
+                
+                <div class="flex flex-wrap justify-center gap-3 md:gap-6 w-full mb-8">
+                    <div class="bg-black/40 border border-themePink/40 rounded-2xl p-4 min-w-[70px] md:min-w-[90px] flex-1">
+                        <span id="cd-days" class="font-orbitron text-3xl md:text-4xl font-black text-white block">00</span>
+                        <span class="font-inter text-xs md:text-sm text-gray-300 uppercase tracking-widest mt-2 block">Días</span>
+                    </div>
+                    <div class="bg-black/40 border border-themePink/40 rounded-2xl p-4 min-w-[70px] md:min-w-[90px] flex-1">
+                        <span id="cd-hours" class="font-orbitron text-3xl md:text-4xl font-black text-white block">00</span>
+                        <span class="font-inter text-xs md:text-sm text-gray-300 uppercase tracking-widest mt-2 block">Hrs</span>
+                    </div>
+                    <div class="bg-black/40 border border-themePink/40 rounded-2xl p-4 min-w-[70px] md:min-w-[90px] flex-1">
+                        <span id="cd-mins" class="font-orbitron text-3xl md:text-4xl font-black text-white block">00</span>
+                        <span class="font-inter text-xs md:text-sm text-gray-300 uppercase tracking-widest mt-2 block">Min</span>
+                    </div>
+                    <div class="bg-black/40 border border-themePink/40 rounded-2xl p-4 min-w-[70px] md:min-w-[90px] flex-1">
+                        <span id="cd-secs" class="font-orbitron text-3xl md:text-4xl font-black text-white block">00</span>
+                        <span class="font-inter text-xs md:text-sm text-gray-300 uppercase tracking-widest mt-2 block">Seg</span>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/maps/place/Iglesia+Cristiana+de+Puente+Largo,+Auditorio+Floresta/@4.6930508,-74.0770647,996m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8e3f9ad8e74da06f:0x7e5aff083c04a809!8m2!3d4.6930508!4d-74.0744898!16s%2Fg%2F1tlvql45?entry=ttu" target="_blank" class="inline-block w-full font-orbitron font-bold uppercase tracking-wider px-6 py-4 rounded-xl btn-pulse text-sm md:text-sm">
+                    <i class="fa-solid fa-map-location-dot mr-2 text-white"></i> Auditorio Auxiliar Puente Largo
+                </a>
+            </section>
+        </div>
+
+        <section id="unete" class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden border border-themeOrange/40 shadow-[0_0_40px_rgba(255,94,58,0.15)]">
+            <div class="absolute -left-32 -bottom-32 w-64 h-64 bg-themeOrange rounded-full blur-[100px] opacity-20 pointer-events-none"></div>
+            
+            <div class="text-center mb-10 relative z-10">
+                <h2 class="font-orbitron text-3xl md:text-4xl uppercase text-white mb-4">
+                    <i class="fa-solid fa-user-astronaut text-themeOrange mr-3"></i> Únete a Nuestra Tripulación
+                </h2>
+                <p class="font-inter text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed">
+                    No estás diseñado para navegar solo por el universo. Sube a bordo de RELEVANTE, un espacio donde serás acompañado de cerca por líderes que Dios ha puesto para apoyarte, guiarte e impulsar tu crecimiento personal y espiritual. <strong>¡Inicia tu viaje con nosotros hoy!</strong>
+                </p>
+            </div>
+
+            <form action="https://formspree.io/f/TU_CODIGO_FORMSPREE" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                <div>
+                    <label class="block text-gray-200 text-sm font-inter mb-2">Nombre Completo <span class="text-themePink">*</span></label>
+                    <input type="text" name="nombre_nuevo" required class="input-glow w-full bg-black/50 border border-gray-600 rounded-xl px-4 py-3 text-white transition-colors" placeholder="Ej. Juan Pérez">
+                </div>
+                <div>
+                    <label class="block text-gray-200 text-sm font-inter mb-2">Edad <span class="text-themePink">*</span></label>
+                    <input type="number" name="edad" required min="18" max="60" class="input-glow w-full bg-black/50 border border-gray-600 rounded-xl px-4 py-3 text-white transition-colors" placeholder="Ej. 28">
+                </div>
+                <div>
+                    <label class="block text-gray-200 text-sm font-inter mb-2">Teléfono / WhatsApp <span class="text-themePink">*</span></label>
+                    <input type="tel" name="telefono" required class="input-glow w-full bg-black/50 border border-gray-600 rounded-xl px-4 py-3 text-white transition-colors" placeholder="Ej. +57 300 123 4567">
+                </div>
+                <div>
+                    <label class="block text-gray-200 text-sm font-inter mb-2">Correo Electrónico <span class="text-themePink">*</span></label>
+                    <input type="email" name="correo" required class="input-glow w-full bg-black/50 border border-gray-600 rounded-xl px-4 py-3 text-white transition-colors" placeholder="correo@ejemplo.com">
+                </div>
+                
+                <div class="md:col-span-2 text-center mt-4">
+                    <button type="submit" class="w-full md:w-auto px-12 py-4 font-orbitron font-bold uppercase tracking-widest rounded-xl btn-pulse bg-transparent">
+                        <i class="fa-solid fa-satellite mr-2"></i> Solicitar Ingreso
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="oracion">
+            <section class="glass-card rounded-3xl p-8 relative overflow-hidden">
+                <h2 class="font-orbitron text-2xl uppercase text-white mb-4 flex items-center">
+                    <i class="fa-solid fa-satellite-dish text-themeOrange mr-3"></i> Peticiones de Oración
+                </h2>
+                <p class="font-inter text-gray-300 text-sm mb-6 relative z-10">
+                    Ya sea que estés atravesando una tormenta de meteoritos o agradeciendo por un milagro, queremos orar por ti. Nuestro equipo intercesor respaldará tu petición.
+                </p>
+                
+                <form action="https://formspree.io/f/TU_CODIGO_FORMSPREE" method="POST" class="space-y-5 relative z-10">
+                    <div>
+                        <label class="block text-gray-200 text-sm font-inter mb-2">Nombre (Opcional)</label>
+                        <input type="text" name="nombre_oracion" class="input-glow w-full bg-black/40 border border-gray-600 rounded-xl px-4 py-3 text-white transition-colors" placeholder="Tripulante Anónimo">
+                    </div>
+                    <div>
+                        <label class="block text-gray-200 text-sm font-inter mb-2">Tu Petición <span class="text-themePink">*</span></label>
+                        <textarea name="peticion" required rows="4" class="input-glow w-full bg-black/40 border border-gray-600 rounded-xl px-4 py-3 text-white transition-colors" placeholder="Escribe tu mensaje al cielo aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full font-orbitron font-bold uppercase tracking-widest py-4 rounded-xl btn-pulse bg-transparent">
+                        Enviar al Cielo <i class="fa-solid fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </section>
+
+            <section class="glass-card rounded-3xl p-8 flex flex-col">
+                <h2 class="font-orbitron text-2xl uppercase text-white mb-4 flex items-center">
+                    <i class="fa-brands fa-spotify text-[#1DB954] mr-3"></i> Frecuencia Relevante
+                </h2>
+                <p class="font-inter text-gray-300 text-sm mb-6">
+                    Sintoniza nuestra estación. Canciones de adoración y alabanza para acompañar tu órbita diaria hacia la próxima reunión.
+                </p>
+                <div class="flex-grow w-full rounded-2xl overflow-hidden shadow-2xl border border-gray-700/50 bg-black/50">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DXa2SPUyWl8Y5?utm_source=generator&theme=0" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="min-h-[352px]"></iframe>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 bg-themeBlue/30 backdrop-blur-md py-8 mt-12 text-center text-gray-400 font-inter text-sm px-4">
+        <p>© <span id="current-year"></span> Ministerio RELEVANTE. Iglesia Puente Largo - Floresta.</p>
+        <p class="mt-2 text-themePink/80 font-semibold tracking-wide">Diseñado para expandir el Reino.</p>
+    </footer>
+
+    <script>
+        // Array de Versículos
+        const verses = [
+            { text: "Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.", ref: "Josué 1:9" },
+            { text: "Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis.", ref: "Jeremías 29:11" },
+            { text: "Todo lo puedo en Cristo que me fortalece.", ref: "Filipenses 4:13" },
+            { text: "Mas los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como las águilas; correrán, y no se cansarán; caminarán, y no se fatigarán.", ref: "Isaías 40:31" },
+            { text: "Echando toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.", ref: "1 Pedro 5:7" },
+            { text: "El Señor es mi luz y mi salvación; ¿a quién temeré? El Señor es el baluarte de mi vida; ¿de quién me asustaré?", ref: "Salmo 27:1" },
+            { text: "Lámpara es a mis pies tu palabra, y lumbrera a mi camino.", ref: "Salmos 119:105" },
+            { text: "Confía en Jehová con todo tu corazón, y no te apoyes en tu propia prudencia.", ref: "Proverbios 3:5" },
+            { text: "No os conforméis a este siglo, sino transformaos por medio de la renovación de vuestro entendimiento...", ref: "Romanos 12:2" },
+            { text: "Jehová es mi pastor; nada me faltará.", ref: "Salmos 23:1" }
+        ];
+
+        function setRandomVerse() {
+            const randomIndex = Math.floor(Math.random() * verses.length);
+            const verse = verses[randomIndex];
+            document.getElementById('random-verse-text').innerText = `"${verse.text}"`;
+            document.getElementById('random-verse-ref').innerText = verse.ref;
+        }
+
+        // Countdown Logic (Sábados a las 5:00 PM)
+        function getNextSaturday5PM() {
+            const now = new Date();
+            const targetDate = new Date(now);
+            
+            let daysUntilSaturday = 6 - now.getDay();
+            
+            // Si es sábado y pasó de las 5PM, saltar al próximo sábado
+            if (daysUntilSaturday === 0 && (now.getHours() >= 17)) {
+                daysUntilSaturday = 7;
+            } else if (daysUntilSaturday < 0) {
+                // Si es domingo (-1)
+                daysUntilSaturday += 7;
+            }
+            
+            targetDate.setDate(now.getDate() + daysUntilSaturday);
+            targetDate.setHours(17, 0, 0, 0); 
+            
+            return targetDate.getTime();
+        }
+
+        let countDownDate = getNextSaturday5PM();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            let distance = countDownDate - now;
+            
+            // Recalcular si llega a 0
+            if (distance < 0) {
+                countDownDate = getNextSaturday5PM();
+                distance = countDownDate - now;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("cd-days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("cd-hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("cd-mins").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("cd-secs").innerText = seconds.toString().padStart(2, '0');
+        }
+
+        // Inicializar eventos
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-year').innerText = new Date().getFullYear();
+            setRandomVerse();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>
