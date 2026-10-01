@@ -38,6 +38,15 @@
             font-family: 'Inter', sans-serif;
         }
 
+        .logo-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 30px rgba(255, 64, 129, 0.5);
+        }
+
         /* Space Background Animations */
         .stars-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
@@ -119,11 +128,7 @@
 
     <header class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 pt-10">
         
-        <div class="w-[150px] h-[150px] rounded-full bg-rlv-gradient border-2 border-dashed border-white flex justify-center items-center mb-8 shadow-[0_0_30px_rgba(255,0,127,0.5)] p-4 relative z-10">
-            <span class="font-orbitron text-xs font-bold text-white text-center drop-shadow-md">
-                ESPACIO PARA LOGO
-            </span>
-        </div>
+        <img src="logorlv.jpg" alt="Logo RELEVANTE" class="logo-img relative z-10">
 
         <div class="max-w-4xl mx-auto relative z-10">
             <h1 class="font-orbitron font-black text-5xl md:text-7xl mb-6 text-gradient uppercase tracking-wider">
